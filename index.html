@@ -185,17 +185,18 @@ the package repository:</p>
 <h3 id="label-Extension+Pack">Extension Pack</h3>
 
 <p>There&#39;s a defined type to install an Extension Pack. I&#39;m not aware
-of any exteion packs other than the Oracle Extension Pack, but this type
+of any extension packs other than the Oracle Extension Pack, but this type
 should work for third party extensions. You can install Oracle&#39;s
 Extension Pack (adding support for USB 2.0, access to webcam, RDP and E1000
 PXE ROM) like so:</p>
 
 <pre class="code ruby"><code class="ruby">virtualbox::extpack { &#39;Oracle_VM_VirtualBox_Extension_Pack&#39;:
-	ensure           =&gt; present,
-	source           =&gt; &#39;http://download.virtualbox.org/virtualbox/4.3.20/Oracle_VM_VirtualBox_Extension_Pack-4.3.20.vbox-extpack&#39;,
-	checksum_string  =&gt; &#39;4b7546ddf94308901b629865c54d5840&#39;,
-	follow_redirects =&gt; true,
-}</code></pre>
+  ensure           =&gt; present,
+  source           =&gt; &#39;http://download.virtualbox.org/virtualbox/4.3.20/Oracle_VM_VirtualBox_Extension_Pack-4.3.20.vbox-extpack&#39;,
+  checksum_string  =&gt; &#39;4b7546ddf94308901b629865c54d5840&#39;,
+  follow_redirects =&gt; true,
+}
+</code></pre>
 
 <p>This will download the extension pack, check to make sure the downloaded
 file matches the expected md5sum, then install the extension pack to
@@ -222,9 +223,9 @@ help, just ask!</p>
 </div></div>
 
     <div id="footer">
-  Generated on Sat Jan 31 20:16:55 2015 by
+  Generated on Sat Feb  7 14:18:47 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.6 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.1.4).
 </div>
 
   </body>
