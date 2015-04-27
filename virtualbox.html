@@ -73,11 +73,11 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Hostclass: virtualbox
-  
-  
-  
-</h1>
+    <div id="content"><div class='module_header'>
+  <h1>
+    Puppet Class: virtualbox
+  </h1>
+</div>
 
 <dl class="box">
   
@@ -104,7 +104,7 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
+    <p>
 <h2 id="label-Class%3A+virtualbox">Class: virtualbox</h2>
 
 <p>This is a public class. This class installs VirtualBox.</p>
@@ -121,6 +121,10 @@ Defaults to present</p>
 </dd><dt><strong>manage_repo</strong>
 <dd>
 <p>Should this module manage the package repository? Defaults to true</p>
+</dd><dt><strong>manage_ext_repo</strong>
+<dd>
+<p>On applicable platforms, should this module manage the external dependency
+repository when `manage_kernel` is set to true? Defaults to true</p>
 </dd><dt><strong>manage_package</strong>
 <dd>
 <p>Should this module manage the package? Defaults to true</p>
@@ -138,119 +142,24 @@ not the default. When the default is in use, it gets compounded with the
 major.minor components of the version number. Defaults to
 &#39;VirtualBox&#39; for RedHat and &#39;virtualbox&#39; for Debian</p>
 </dd></dl>
-
-
+</p>
   </div>
 </div>
 <div class="tags">
   
-
-</div><h2>Parameter Summary<small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
-<ul class="summary">
   
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>version</strong>
-          
-            
-            => $virtualbox::params::version
-          
-        </span>
-        
-      </a>
-    </li>
   
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>package_ensure</strong>
-          
-            
-            => $virtualbox::params::package_ensure
-          
-        </span>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>manage_repo</strong>
-          
-            
-            => $virtualbox::params::manage_repo
-          
-        </span>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>manage_package</strong>
-          
-            
-            => $virtualbox::params::manage_package
-          
-        </span>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>manage_kernel</strong>
-          
-            
-            => $virtualbox::params::manage_kernel
-          
-        </span>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>vboxdrv_dependencies</strong>
-          
-            
-            => $virtualbox::params::vboxdrv_dependencies
-          
-        </span>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="#">
-        <span class="summary_signature">
-          -
-          <strong>package_name</strong>
-          
-            
-            => $virtualbox::params::package_name
-          
-        </span>
-        
-      </a>
-    </li>
-  
-</ul>
+</div>
+<h2>Parameter Summary</h2>
+<div class="tags">
+  <ul class="param">
+    <li><span class="name">version </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::version</tt></li><li><span class="name">package_ensure </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::package_ensure</tt></li><li><span class="name">manage_repo </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::manage_repo</tt></li><li><span class="name">manage_ext_repo </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::manage_ext_repo</tt></li><li><span class="name">manage_package </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::manage_package</tt></li><li><span class="name">manage_kernel </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::manage_kernel</tt></li><li><span class="name">vboxdrv_dependencies </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::vboxdrv_dependencies</tt></li><li><span class="name">package_name </span><span class="type">(<tt>TBD</tt>)</span><tt> => $virtualbox::params::package_name</tt></li>
+  </ul>
+</div>
 </div>
 
     <div id="footer">
-  Generated on Sat Feb  7 14:19:16 2015 by
+  Generated on Sun Apr 26 20:53:56 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.4).
 </div>

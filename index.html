@@ -83,22 +83,24 @@ src="http://img.shields.io/badge/docs-puppet--strings-ff69b4.svg?style=flat"></a
 repositories or custom defined repositories. By default, this module will
 also configure the kernel modules required to run VirtualBox.</p>
 
-<p>By default, this module will install the Oracle VirtualBox yum/apt repo,
-install the VirtualBox package, and build the VirtualBox kernel modules.
-You can define a custom package name and/or version, you can also opt to
-not manage the repositories with this module. Because of the strange
-convention Oracle has opted to use for versioning VirtualBox, if you set a
-custom package name, the <code>version</code> parameter will be ignored. If
-you wish to define a package version with a custom package name, you must
-use the <code>package_ensure</code> parameter.</p>
+<p>By default, this module will install the Oracle VirtualBox yum/apt repo
+(see the <a href="#note-for-debianubuntu-users-using-puppet--350">Note for
+Debian/Ubuntu Users using Puppet < 3.5.0</a> below), install the VirtualBox
+package, and build the VirtualBox kernel modules. You can define a custom
+package name and/or version, you can also opt to not manage the
+repositories with this module. Because of the strange convention Oracle has
+opted to use for versioning VirtualBox, if you set a custom package name,
+the <code>version</code> parameter will be ignored. If you wish to define a
+package version with a custom package name, you must use the
+<code>package_ensure</code> parameter.</p>
 
 <h2 id="label-Support">Support</h2>
 
 <p>This module is tested with:</p>
 <ul><li>
-<p>CentOS 5.10</p>
+<p>CentOS 5.11</p>
 </li><li>
-<p>CentOS 6.5</p>
+<p>CentOS 6.6</p>
 </li><li>
 <p>CentOS 7.0</p>
 </li><li>
@@ -117,11 +119,11 @@ use the <code>package_ensure</code> parameter.</p>
 that we&#39;re targeting. If you wish to see another distro/version added
 to this list, so would we! PRs are welcome :)</p>
 
-<p>This module is tested with the latest version of Puppet 2.7 and all minor
-versions of Puppet 3; all Puppet supported versions of Ruby are included in
-the test matrix. It is also tested with the future parser in the latest
-release of Puppet. If you&#39;re interested in the testing matrix, please
-have a look at the <code>.travis.yml</code> file in the root of the module.</p>
+<p>This module is tested with the latest version of Puppet 2.7 as well as all
+minor versions of Puppet 3 and Puppet 4; all Puppet supported versions of
+Ruby are included in the test matrix. If you&#39;re interested in the
+testing matrix, please have a look at the <code>.travis.yml</code> file in
+the root of the module.</p>
 
 <h2 id="label-Usage">Usage</h2>
 
@@ -202,6 +204,20 @@ PXE ROM) like so:</p>
 file matches the expected md5sum, then install the extension pack to
 <code>/usr/lib/virtualbox/ExtensionPacks</code>.</p>
 
+<h2 id="label-Note+for+Debian%2FUbuntu+Users+using+Puppet+%3C+3.5.0">Note for Debian/Ubuntu Users using Puppet &lt; 3.5.0</h2>
+
+<p>This module depends on <code>puppetlabs/apt</code> &gt;= 2.0.0 which has
+dropped support for Puppet &lt; 3.5.0. While this module is still
+compatible with Puppet 2.7 and above, Debian/Ubuntu users on Puppet &lt;
+3.5.0 will no longer be able to manage the VirtualBox repository with this
+module. The default <code>manage_repo</code> setting for Debian/Ubuntu with
+Puppet &lt; 3.5.0 is <code>false</code>, but remains <code>true</code> for
+all other <code>puppetversion</code> and
+<code>operatingsystemversion</code> combinations. Unfortunately, I am not
+able to express this nuance in the module metadata, so these users will
+need to work around the dependency resolution in the <code>puppet
+module</code> tool. I apologize for the inconvenience.</p>
+
 <h2 id="label-Development">Development</h2>
 <ol><li>
 <p>Fork it</p>
@@ -223,7 +239,7 @@ help, just ask!</p>
 </div></div>
 
     <div id="footer">
-  Generated on Sat Feb  7 14:19:15 2015 by
+  Generated on Sun Apr 26 20:53:56 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.4).
 </div>
