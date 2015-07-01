@@ -84,8 +84,8 @@ repositories or custom defined repositories. By default, this module will
 also configure the kernel modules required to run VirtualBox.</p>
 
 <p>By default, this module will install the Oracle VirtualBox yum/apt repo
-(see the <a href="#note-for-debianubuntu-users-using-puppet--350">Note for
-Debian/Ubuntu Users using Puppet < 3.5.0</a> below), install the VirtualBox
+(see the <a href="#note-for-debianubuntu-users-using-puppet--300">Note for
+Debian/Ubuntu Users using Puppet < 3.0.0</a> below), install the VirtualBox
 package, and build the VirtualBox kernel modules. You can define a custom
 package name and/or version, you can also opt to not manage the
 repositories with this module. Because of the strange convention Oracle has
@@ -104,9 +104,9 @@ package version with a custom package name, you must use the
 </li><li>
 <p>CentOS 7.0</p>
 </li><li>
-<p>Debian 6.0.7</p>
+<p>Debian 6.0.10</p>
 </li><li>
-<p>Debian 7.3</p>
+<p>Debian 7.8</p>
 </li><li>
 <p>Ubuntu 10.04</p>
 </li><li>
@@ -204,14 +204,14 @@ PXE ROM) like so:</p>
 file matches the expected md5sum, then install the extension pack to
 <code>/usr/lib/virtualbox/ExtensionPacks</code>.</p>
 
-<h2 id="label-Note+for+Debian%2FUbuntu+Users+using+Puppet+%3C+3.5.0">Note for Debian/Ubuntu Users using Puppet &lt; 3.5.0</h2>
+<h2 id="label-Note+for+Debian%2FUbuntu+Users+using+Puppet+%3C+3.0.0">Note for Debian/Ubuntu Users using Puppet &lt; 3.0.0</h2>
 
-<p>This module depends on <code>puppetlabs/apt</code> &gt;= 2.0.0 which has
-dropped support for Puppet &lt; 3.5.0. While this module is still
+<p>This module depends on <code>puppetlabs/apt</code> &gt;= 2.1.0 which has
+dropped support for Puppet &lt; 3.0.0. While this module is still
 compatible with Puppet 2.7 and above, Debian/Ubuntu users on Puppet &lt;
-3.5.0 will no longer be able to manage the VirtualBox repository with this
+3.0.0 will no longer be able to manage the VirtualBox repository with this
 module. The default <code>manage_repo</code> setting for Debian/Ubuntu with
-Puppet &lt; 3.5.0 is <code>false</code>, but remains <code>true</code> for
+Puppet &lt; 3.0.0 is <code>false</code>, but remains <code>true</code> for
 all other <code>puppetversion</code> and
 <code>operatingsystemversion</code> combinations. Unfortunately, I am not
 able to express this nuance in the module metadata, so these users will
@@ -239,7 +239,7 @@ help, just ask!</p>
 </div></div>
 
     <div id="footer">
-  Generated on Sun Apr 26 20:53:56 2015 by
+  Generated on Wed Jul  1 13:10:08 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.4).
 </div>
